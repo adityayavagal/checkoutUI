@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   items: [],
   progress: "",
+  couponData: null,
 };
 
 const CartSlice = createSlice({
@@ -45,6 +46,9 @@ const CartSlice = createSlice({
     },
     closeCheckout: (state) => {
       state.progress = "";
+    },
+    applyCoupon: (state, action) => {
+      state.couponData = action.payload.couponData;
     }
   },
 });
